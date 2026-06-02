@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>รายละเอียดการเตรียมการ — คาบแรก 3 ชั่วโมง</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green:       #0A5C44;
+  --green-mid:   #1D9E75;
+  --green-light: #E8F5F0;
+  --green-pale:  #F4FAF7;
+  --blue:        #1e3a5f;
+  --blue-mid:    #2563EB;
+  --blue-light:  #DBEAFE;
+  --amber:       #92400E;
+  --amber-light: #FEF3C7;
+  --red:         #991B1B;
+  --red-light:   #FEF2F2;
+  --gray:        #374151;
+  --gray-mid:    #6B7280;
+  --gray-light:  #F3F4F6;
+  --border:      #E5E7EB;
+  --white:       #FFFFFF;
+}
+*{ box-sizing:border-box; margin:0; padding:0; }
+body{
+  font-family:'Sarabun',sans-serif;
+  font-size:11px;
+  color:#111827;
+  background:#fff;
+  line-height:1.5;
+}
+@page { size:A4 portrait; margin:8mm 10mm; }
+@media screen {
+  body{ background:#e5e7eb; padding:20px; }
+  .page{ box-shadow:0 4px 24px rgba(0,0,0,.15); margin-bottom:20px; }
+}
+@media print {
+  body{ background:#fff; padding:0; }
+  .page{ box-shadow:none; }
+  .no-print{ display:none !important; }
+  .page-break{ page-break-before:always; }
+}
+.page{
+  width:190mm;
+  min-height:277mm;
+  background:#fff;
+  margin:0 auto;
+  padding:0;
+}
+
+/* HEADER */
+.header{
+  background:var(--blue);
+  padding:11px 14px 10px;
+  display:flex; align-items:flex-start; justify-content:space-between;
+}
+.header-left .dept{
+  font-size:8px; color:rgba(255,255,255,.7); letter-spacing:.5px; text-transform:uppercase; margin-bottom:3px;
+}
+.header-left .title{
+  font-size:13px; font-weight:700; color:#fff; line-height:1.3;
+}
+.header-left .subtitle{
+  font-size:9px; color:rgba(255,255,255,.75); margin-top:3px;
+}
+.header-right{
+  text-align:right; font-size:8px; color:rgba(255,255,255,.65); line-height:1.7;
+}
+.header-right .badge{
+  display:inline-block; background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.3);
+  color:#fff; font-size:8px; padding:2px 8px; border-radius:10px; margin-bottom:3px;
+}
+
+/* SESSION BANNER */
+.session-banner{
+  background:var(--blue-light); border-bottom:2px solid #BFDBFE;
+  padding:7px 14px; display:flex; align-items:center; justify-content:space-between;
+}
+.sb-left{ display:flex; align-items:center; gap:8px; }
+.sb-tag{
+  background:var(--blue); color:#fff; font-size:9px; font-weight:700;
+  padding:3px 10px; border-radius:10px; letter-spacing:.3px;
+}
+.sb-title{ font-size:11px; font-weight:700; color:var(--blue); }
+.sb-right{ font-size:9px; color:var(--blue-mid); font-weight:600; }
+
+/* BODY */
+.body{ padding:12px 14px; }
+
+/* SECTION HEADER */
+.section-wrap{ margin-bottom:11px; }
+.section-header{
+  display:flex; align-items:center; gap:7px; padding:6px 10px;
+  border-radius:6px 6px 0 0; margin-bottom:0;
+}
+.sh-instructor{ background:var(--green); }
+.sh-student{ background:#7C3AED; }
+.sh-content{ background:#B45309; }
+.section-icon{ font-size:13px; }
+.section-title{ font-size:11px; font-weight:700; color:#fff; flex:1; }
+.section-sub{ font-size:8px; color:rgba(255,255,255,.75); }
+
+/* CHECKLIST GROUPS */
+.check-body{
+  border:1px solid var(--border); border-top:none;
+  border-radius:0 0 6px 6px; overflow:hidden;
+}
+.check-group-title{
+  font-size:9px; font-weight:700; color:var(--gray);
+  background:var(--gray-light); padding:5px 10px;
+  border-bottom:1px solid var(--border); text-transform:uppercase; letter-spacing:.3px;
+}
+.check-item{
+  display:flex; align-items:flex-start; gap:7px;
+  padding:5px 10px; border-bottom:1px solid var(--border);
+}
+.check-item:last-child{ border-bottom:none; }
+.check-box{
+  width:12px; height:12px; border:1.5px solid #D1D5DB;
+  border-radius:3px; flex-shrink:0; margin-top:1px; background:#fff;
+}
+.check-content{ flex:1; }
+.check-label{ font-size:10px; color:#111827; font-weight:500; }
+.check-note{ font-size:9px; color:var(--gray-mid); margin-top:1px; line-height:1.5; }
+.check-tag{
+  display:inline-block; margin-top:3px; font-size:8px; font-weight:600; padding:1px 6px;
+  border-radius:6px;
+}
+.tag-must{ background:#FEE2E2; color:#991B1B; }
+.tag-prep{ background:#FEF3C7; color:#92400E; }
+.tag-tech{ background:#DBEAFE; color:#1D4ED8; }
+.tag-mat{ background:#D1FAE5; color:#065F46; }
+.tag-opt{ background:var(--gray-light); color:var(--gray); }
+
+/* PROMPT BOX */
+.prompt-box{
+  background:#F0FDF4; border:1px solid #BBF7D0; border-radius:6px;
+  padding:8px 11px; margin:8px 10px;
+}
+.prompt-label{ font-size:8px; font-weight:700; color:var(--green); text-transform:uppercase; letter-spacing:.4px; margin-bottom:5px; }
+.prompt-example{
+  font-family:'IBM Plex Mono',monospace; font-size:9px; color:#065F46;
+  background:#ECFDF5; border:1px solid #A7F3D0; border-radius:4px;
+  padding:6px 8px; line-height:1.7; margin-bottom:5px;
+}
+.prompt-tip{ font-size:9px; color:var(--gray-mid); }
+
+/* PHOTO TIPS */
+.photo-grid{ display:grid; grid-template-columns:1fr 1fr; gap:5px; padding:8px 10px; }
+.photo-tip-card{
+  background:var(--blue-light); border:1px solid #BFDBFE; border-radius:5px; padding:6px 8px;
+}
+.ptc-icon{ font-size:11px; margin-bottom:2px; }
+.ptc-title{ font-size:9px; font-weight:700; color:var(--blue); }
+.ptc-desc{ font-size:8.5px; color:#374151; margin-top:1px; line-height:1.5; }
+
+/* SPECIMEN TABLE */
+.specimen-table{ width:100%; border-collapse:collapse; font-size:9px; }
+.specimen-table th{
+  background:var(--green); color:#fff; padding:4px 7px;
+  text-align:left; font-size:8px; font-weight:600; text-transform:uppercase; letter-spacing:.3px;
+}
+.specimen-table td{ padding:4px 7px; border-bottom:1px solid var(--border); }
+.specimen-table tr:last-child td{ border-bottom:none; }
+.specimen-table tr:nth-child(even) td{ background:var(--gray-light); }
+.diff-easy{ color:#065F46; font-weight:600; }
+.diff-med{ color:#92400E; font-weight:600; }
+.diff-hard{ color:#991B1B; font-weight:600; }
+
+/* TIMELINE MINI */
+.timeline-mini{ padding:8px 10px; }
+.tlm-row{ display:flex; gap:7px; align-items:flex-start; margin-bottom:5px; }
+.tlm-row:last-child{ margin-bottom:0; }
+.tlm-time{ font-family:'IBM Plex Mono',monospace; font-size:8px; color:#9CA3AF; width:58px; flex-shrink:0; padding-top:2px; }
+.tlm-dot{ width:6px; height:6px; border-radius:50%; background:var(--blue-mid); margin-top:3px; flex-shrink:0; }
+.tlm-content{ flex:1; }
+.tlm-label{ font-size:9px; font-weight:600; color:#111827; }
+.tlm-desc{ font-size:8.5px; color:#6B7280; line-height:1.5; }
+
+/* WARN BOX */
+.warn-box{
+  background:var(--red-light); border:1px solid #FECACA; border-radius:5px;
+  padding:6px 10px; margin:7px 10px; display:flex; gap:7px;
+}
+.warn-icon{ font-size:13px; flex-shrink:0; }
+.warn-text{ font-size:9px; color:var(--red); line-height:1.6; }
+
+/* DIVIDER */
+.section-divider{ height:1px; background:var(--border); margin:10px 0; }
+
+/* FOOTER */
+.footer{
+  background:var(--blue); padding:6px 14px;
+  display:flex; justify-content:space-between; align-items:center;
+}
+.footer-text{ font-size:8px; color:rgba(255,255,255,.65); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left">
+      <div class="dept">ภาควิชาโรคพืช · คณะเกษตร กำแพงแสน · มหาวิทยาลัยเกษตรศาสตร์</div>
+      <div class="title">รายละเอียดการเตรียมการและเนื้อหาการสอน<br>การวินิจฉัยโรคพืชคัดกรองด้วย AI — ภาคทฤษฎีและปฏิบัติ</div>
+      <div class="subtitle">สำหรับทีมผู้สอน · ใช้ประกอบคู่กับเอกสารโครงสร้างหัวข้อ</div>
+    </div>
+    <div class="header-right">
+      <div class="badge">คาบที่ 1 จาก 3</div><br>
+      ระยะเวลา 3 ชั่วโมง<br>
+      ห้องเรียน + ตัวอย่างพืชป่วย
+    </div>
+  </div>
+
+  <!-- SESSION BANNER -->
+  <div class="session-banner">
+    <div class="sb-left">
+      <span class="sb-tag">ครั้งที่ 1</span>
+      <span class="sb-title">AI วินิจฉัยโรคจากภาพ — ภาคทฤษฎีและปฏิบัติในห้อง</span>
+    </div>
+    <span class="sb-right">เป้าหมาย: นิสิตส่งภาพโรคพืชให้ AI วิเคราะห์ได้ และตั้งคำถามเชิงวิพากษ์ต่อผลลัพธ์</span>
+  </div>
+
+  <div class="body">
+
+    <!-- ===== INSTRUCTOR ===== -->
+    <div class="section-wrap">
+      <div class="section-header sh-instructor">
+        <span class="section-icon">🧑‍🏫</span>
+        <span class="section-title">สิ่งที่อาจารย์ผู้สอนต้องเตรียม</span>
+        <span class="section-sub">เตรียมให้ครบก่อนวันสอน</span>
+      </div>
+      <div class="check-body">
+
+        <!-- กลุ่ม 1: สื่อและเนื้อหา -->
+        <div class="check-group-title">📋 สื่อและเนื้อหาการสอน</div>
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">สไลด์ปูพื้น: ภาพรวม Vision AI กับการวินิจฉัยโรคพืช</div>
+            <div class="check-note">ควรมี: ข้อดี, ข้อจำกัดของ AI, กรณีศึกษาจริงจากงานวิจัยหรือการใช้งานจริง</div>
+            <span class="check-tag tag-must">จำเป็น</span>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">ตัวอย่าง Prompt สำเร็จรูป 2–3 แบบ สำหรับแจกนิสิต</div>
+            <div class="check-note">นิสิตจะได้นำไปปรับใช้ได้ทันทีโดยไม่ต้องเริ่มจากศูนย์</div>
+            <span class="check-tag tag-must">จำเป็น</span>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">เกณฑ์การถ่ายภาพโรคพืชที่ดี (สไลด์หรือใบแจก)</div>
+            <div class="check-note">ระยะภาพ (close-up อาการ + wide shot ทั้งต้น) · แสงเพียงพอ · มุมกล้อง · จับส่วนที่มีอาการชัดเจน</div>
+            <span class="check-tag tag-must">จำเป็น</span>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">ใบบันทึกผลการทดลองคาบแรก (กระดาษหรือ Google Form)</div>
+            <div class="check-note">ช่องที่ต้องมี: ชื่อกลุ่ม · รหัสตัวอย่าง · ภาพที่ถ่าย · ผลวินิจฉัยของ AI · ความเห็นกลุ่ม</div>
+            <span class="check-tag tag-must">จำเป็น</span>
+          </div>
+        </div>
+
+        <!-- prompt box -->
+        <div class="prompt-box">
+          <div class="prompt-label">ตัวอย่าง Prompt ที่แนะนำ (แจกนิสิต)</div>
+          <div class="prompt-example">
+"พืชชนิดนี้คือ [ชื่อพืช] อายุ [x] สัปดาห์/เดือน<br>
+พบอาการที่ [ส่วนของพืช เช่น ใบ ลำต้น ราก]<br>
+ลักษณะอาการ: [อธิบายสีและรูปร่างของอาการ]<br>
+ความเสียหายประมาณ [x]% ปลูกในจังหวัด [x]<br>
+โปรดวินิจฉัยโรคและเชื้อสาเหตุที่น่าจะเป็นไปได้"
+          </div>
+          <div class="prompt-tip">💡 Prompt ภาษาอังกฤษมักให้ผลแม่นยำกว่า — แนะนำให้นิสิตลองทั้งสองภาษาแล้วเปรียบเทียบผล</div>
+        </div>
+
+        <!-- กลุ่ม 2: การถ่ายภาพ -->
+        <div class="check-group-title">📸 เกณฑ์การถ่ายภาพโรคพืชที่ดี (ใช้สาธิต)</div>
+        <div class="photo-grid">
+          <div class="photo-tip-card">
+            <div class="ptc-icon">🔍</div>
+            <div class="ptc-title">ระยะภาพ</div>
+            <div class="ptc-desc">ถ่าย 2 ระยะ: ใกล้ (close-up อาการ) และไกล (ทั้งต้น/บริบทแปลง)</div>
+          </div>
+          <div class="photo-tip-card">
+            <div class="ptc-icon">☀️</div>
+            <div class="ptc-title">แสง</div>
+            <div class="ptc-desc">ใช้แสงธรรมชาติ หลีกเลี่ยงเงาและ flash · ถ่ายในที่ร่มถ้าแดดจัด</div>
+          </div>
+          <div class="photo-tip-card">
+            <div class="ptc-icon">🌿</div>
+            <div class="ptc-title">โฟกัส</div>
+            <div class="ptc-desc">โฟกัสที่รอยโรคโดยตรง ไม่เบลอ ไม่มีนิ้วบัง</div>
+          </div>
+          <div class="photo-tip-card">
+            <div class="ptc-icon">📏</div>
+            <div class="ptc-title">มาตราส่วน</div>
+            <div class="ptc-desc">วางไม้บรรทัดหรือเหรียญข้างๆ เพื่อให้ AI เห็นขนาดของรอยโรค</div>
+          </div>
+        </div>
+
+        <!-- กลุ่ม 3: ตัวอย่างพืชป่วย -->
+        <div class="check-group-title">🌿 ตัวอย่างพืชป่วย (เตรียมนำไปในห้องเรียน)</div>
+        <table class="specimen-table">
+          <tr>
+            <th>เชื้อสาเหตุ</th>
+            <th>ชนิดโรค/อาการที่แนะนำ</th>
+            <th>จำนวน</th>
+            <th>ระดับ</th>
+          </tr>
+          <tr>
+            <td>เชื้อรา</td>
+            <td>ราแป้ง / ใบไหม้ / ราน้ำค้าง (อาการชัดเจน)</td>
+            <td>1–2 ชิ้น</td>
+            <td class="diff-easy">ง่าย</td>
+          </tr>
+          <tr>
+            <td>แบคทีเรีย</td>
+            <td>ใบจุดแบคทีเรีย / เน่าเละ / แผลเหลือง</td>
+            <td>1–2 ชิ้น</td>
+            <td class="diff-easy">ง่าย</td>
+          </tr>
+          <tr>
+            <td>ไวรัส</td>
+            <td>โมเสก / ใบด่าง / ใบหงิกงอ</td>
+            <td>1 ชิ้น</td>
+            <td class="diff-med">ปานกลาง</td>
+          </tr>
+          <tr>
+            <td>ไส้เดือนฝอย</td>
+            <td>รากปม / รากเน่า</td>
+            <td>1 ชิ้น (ถ้ามี)</td>
+            <td class="diff-med">ปานกลาง</td>
+          </tr>
+          <tr>
+            <td><strong>พิเศษ: ยาก</strong></td>
+            <td>อาการไม่ชัด หรือมีหลายโรคซ้อน (เพื่อทดสอบ AI)</td>
+            <td>1–2 ชิ้น</td>
+            <td class="diff-hard">ยาก</td>
+          </tr>
+        </table>
+        <div class="warn-box">
+          <div class="warn-icon">⚠️</div>
+          <div class="warn-text">สำคัญ: ทำ Label รหัสตัวอย่างและโรคที่แท้จริงเก็บไว้สำหรับอาจารย์เท่านั้น — <strong>ไม่เปิดเผยนิสิตก่อนกิจกรรมเสร็จ</strong> เพื่อไม่ให้ผลการทดลองเบี่ยงเบน</div>
+        </div>
+
+        <!-- กลุ่ม 4: ด้านเทคนิค -->
+        <div class="check-group-title">💻 ด้านเทคนิคและอุปกรณ์</div>
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">บัญชี Claude Pro หรือ ChatGPT Plus สำหรับสาธิตหน้าจอ</div>
+            <div class="check-note">ทดสอบการอัปโหลดรูปและส่ง prompt ให้สำเร็จก่อนเข้าสอน</div>
+            <span class="check-tag tag-tech">เทคนิค</span>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">ทดสอบ Wi-Fi ในห้องว่าเพียงพอสำหรับนิสิตทุกคนใช้พร้อมกัน</div>
+            <div class="check-note">เตรียม Mobile Hotspot สำรองไว้ 1–2 จุด กรณี Wi-Fi ไม่เสถียร</div>
+            <span class="check-tag tag-tech">เทคนิค</span>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">ตรวจสอบว่าเปิด claude.ai หรือ chatgpt.com ได้จากเครือข่ายมหาวิทยาลัย</div>
+            <div class="check-note">บางสถาบันมี firewall บล็อก — ต้องแก้ไขล่วงหน้าหรือแจ้ง IT</div>
+            <span class="check-tag tag-tech">เทคนิค</span> <span class="check-tag tag-must">ตรวจก่อน</span>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">จอฉาย + สาย HDMI + รีโมทสไลด์</div>
+            <div class="check-note">เตรียมสำรองไว้ด้วย</div>
+            <span class="check-tag tag-tech">เทคนิค</span>
+          </div>
+        </div>
+
+        <!-- กลุ่ม 5: เอกสารแจก -->
+        <div class="check-group-title">📄 เอกสารแจกนิสิต</div>
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">QR Code หรือลิงก์ตัวอย่าง Prompt สำหรับนิสิต</div>
+            <div class="check-note">ส่งผ่าน LINE กลุ่มหรือพิมพ์แจกก่อนคาบก็ได้</div>
+            <span class="check-tag tag-prep">เตรียมล่วงหน้า</span>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">ใบบันทึกผลคาบแรก (พิมพ์ตามจำนวนกลุ่ม หรือส่ง Google Form)</div>
+            <div class="check-note">ช่อง: ชื่อกลุ่ม / รหัสตัวอย่าง / ผล AI / ความเห็นกลุ่ม / ถูกหรือผิด (กรอกหลังเฉลย)</div>
+            <span class="check-tag tag-prep">เตรียมล่วงหน้า</span>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /instructor section -->
+
+    <!-- ===== STUDENT ===== -->
+    <div class="section-wrap">
+      <div class="section-header sh-student">
+        <span class="section-icon">👩‍🎓</span>
+        <span class="section-title">สิ่งที่นิสิตต้องเตรียม</span>
+        <span class="section-sub">แจ้งนิสิตล่วงหน้าก่อนวันเรียน</span>
+      </div>
+      <div class="check-body">
+
+        <div class="check-group-title">📱 อุปกรณ์ที่ต้องนำมา</div>
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">สมาร์ตโฟนที่กล้องทำงานได้ปกติ (ทุกคน บังคับ)</div>
+            <div class="check-note">กล้องหลักที่ถ่ายได้ชัด ไม่ใช่กล้องหน้า</div>
+            <span class="check-tag tag-must">จำเป็น</span>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">แบตสำรอง หรือชาร์จโทรศัพท์มาให้เต็มก่อนมาเรียน</div>
+            <div class="check-note">กิจกรรมใช้กล้อง + อินเทอร์เน็ตต่อเนื่อง แบตหมดเร็ว</div>
+            <span class="check-tag tag-prep">แนะนำ</span>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">Tablet หรือโน้ตบุ๊ก (ถ้ามี นำมาได้ แต่ไม่บังคับ)</div>
+            <div class="check-note">จอใหญ่อ่านผล AI ได้สะดวกกว่า</div>
+            <span class="check-tag tag-opt">ไม่บังคับ</span>
+          </div>
+        </div>
+
+        <div class="check-group-title">🔑 บัญชีที่ต้องสมัครและทดสอบก่อนวันเรียน</div>
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">สมัครบัญชี Claude (claude.ai) หรือ ChatGPT — อย่างใดอย่างหนึ่ง</div>
+            <div class="check-note">แผนฟรีใช้ได้ · สมัครก่อนวันเรียนเพราะบางครั้งต้องยืนยัน OTP ซึ่งเสียเวลาในห้อง</div>
+            <span class="check-tag tag-must">จำเป็น</span>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">ทดสอบการอัปโหลดรูปภาพใน Claude หรือ ChatGPT ให้สำเร็จก่อนมาเรียน</div>
+            <div class="check-note">ลองถ่ายรูปอะไรก็ได้แล้วส่ง AI เพื่อให้แน่ใจว่าฟีเจอร์ใช้งานได้</div>
+            <span class="check-tag tag-must">จำเป็น</span>
+          </div>
+        </div>
+
+        <div class="check-group-title">📚 ความรู้พื้นฐานที่ควรทบทวนก่อนมาเรียน</div>
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">อาการโรคพืชเบื้องต้นจากเชื้อสาเหตุแต่ละกลุ่ม</div>
+            <div class="check-note">รา · แบคทีเรีย · ไวรัส · ไส้เดือนฝอย — ต้องใช้ตัดสินว่า AI ตอบถูกหรือผิด</div>
+            <span class="check-tag tag-prep">ทบทวนก่อน</span>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">ศัพท์อาการโรคพืชภาษาอังกฤษเบื้องต้น</div>
+            <div class="check-note">lesion · chlorosis · necrosis · blight · mosaic · wilt · canker — ใช้เขียน prompt ภาษาอังกฤษ</div>
+            <span class="check-tag tag-prep">ทบทวนก่อน</span>
+          </div>
+        </div>
+
+        <div class="check-group-title">📝 สิ่งที่จะทำในคาบ (รู้ไว้ก่อน ไม่ต้องเตรียมล่วงหน้า)</div>
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">รับตัวอย่างพืชป่วยจากอาจารย์ ถ่ายภาพ เขียน prompt ส่ง AI บันทึกผล</div>
+            <div class="check-note">ทำเป็นกลุ่ม 3–4 คน</div>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-label">นำเสนอผลสั้นๆ ท้ายคาบ กลุ่มละประมาณ 3 นาที</div>
+            <div class="check-note">บอกว่า AI วินิจฉัยว่าอะไร ถูกหรือผิด และทีมคิดว่าทำไม</div>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /student section -->
+
+    <!-- ===== SESSION TIMELINE ===== -->
+    <div class="section-wrap">
+      <div class="section-header sh-content">
+        <span class="section-icon">⏱️</span>
+        <span class="section-title">ลำดับการสอนคาบแรก (3 ชั่วโมง)</span>
+        <span class="section-sub">แผนเวลาสำหรับผู้สอน</span>
+      </div>
+      <div class="check-body">
+        <div class="timeline-mini">
+          <div class="tlm-row">
+            <span class="tlm-time">0:00–0:30</span>
+            <span class="tlm-dot"></span>
+            <div class="tlm-content">
+              <div class="tlm-label">ปูพื้น: ภาพรวม Vision AI กับการวินิจฉัยโรคพืช</div>
+              <div class="tlm-desc">นำเสนอสไลด์ · อธิบายว่า AI ทำงานอย่างไร · ข้อดี/ข้อจำกัด · กรณีศึกษา</div>
+            </div>
+          </div>
+          <div class="tlm-row">
+            <span class="tlm-time">0:30–1:15</span>
+            <span class="tlm-dot"></span>
+            <div class="tlm-content">
+              <div class="tlm-label">สาธิต: การเขียน Prompt และส่งภาพโรคพืชให้ AI</div>
+              <div class="tlm-desc">อาจารย์สาธิตทีละขั้นตอนหน้าจอ · สอนเกณฑ์ถ่ายภาพที่ดี · แจก prompt ตัวอย่าง</div>
+            </div>
+          </div>
+          <div class="tlm-row">
+            <span class="tlm-time">1:15–2:15</span>
+            <span class="tlm-dot"></span>
+            <div class="tlm-content">
+              <div class="tlm-label">ปฏิบัติ: นิสิตถ่ายภาพตัวอย่างพืชป่วยและส่ง AI</div>
+              <div class="tlm-desc">แจกตัวอย่างพืชป่วยตามกลุ่ม · นิสิตถ่ายภาพ เขียน prompt ส่ง AI บันทึกผล · อาจารย์เดินดูและให้คำแนะนำ</div>
+            </div>
+          </div>
+          <div class="tlm-row">
+            <span class="tlm-time">2:15–3:00</span>
+            <span class="tlm-dot"></span>
+            <div class="tlm-content">
+              <div class="tlm-label">อภิปราย: AI ถูก/ผิด อย่างไร? ทำไม? + เฉลย</div>
+              <div class="tlm-desc">นิสิตนำเสนอกลุ่มละ 3 นาที · อาจารย์เปิดเฉลยโรคที่แท้จริง · สรุปบทเรียน: ควรใช้ AI อย่างไรในงานจริง</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /body -->
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span class="footer-text">คลินิกสุขภาพพืช · ภาควิชาโรคพืช · คณะเกษตร กำแพงแสน · มหาวิทยาลัยเกษตรศาสตร์</span>
+    <span class="footer-text">เอกสารสำหรับทีมผู้สอน — คาบที่ 1/3</span>
+  </div>
+
+</div><!-- /page -->
+</body>
+</html>
